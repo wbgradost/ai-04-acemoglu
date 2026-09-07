@@ -3,112 +3,127 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb}
-\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{url}
 \usetheme{default}
 \usecolortheme{seahorse}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[frame number]
 \setbeamerfont{frametitle}{size=\large}
 
-\title{Aouad, Lykouris \& Zhong (2026)}
-\subtitle{\emph{Human-AI Productivity Paradoxes} --- Section 2}
-\author{Alexander Quispe}
-\date{Repository 1 \textperiodcentered{} Week of August 17--22}
+\title{AI, Human Cognition and Knowledge Collapse}
+\subtitle{Acemoglu, Kong \& Ozdaglar (2026)}
+\author{William Gradost}
+\date{Artificial Intelligence and Economic Modeling \textperiodcentered{} Repository 4}
 
 \begin{document}
 
-%================= PORTADA (con el enlace al repositorio) =============
 \begin{frame}[plain]
   \titlepage
   \begin{center}\small
-    \texttt{github.com/alexanderquispe/ai-01-aouad}
+    \url{https://github.com/wbgradost/ai-04-acemoglu}
   \end{center}
 \end{frame}
 
-%================= 1. EL ART\'ICULO ====================================
 \begin{frame}{1 \textperiodcentered{} The paper and the agent's problem}
-  \textbf{Question.} When does AI assistance make a worker \emph{less} productive?
-
-  \medskip
-  \textbf{The single mechanism.} AI is a \emph{perfectly substitutable input}:
-  skill, effort and assistance enter production only through their sum.
-  \[ x \;=\; s + e + a \]
-
-  \medskip
-  \textbf{The agent's problem.} Choose effort $e$ to maximise output net of a
-  \emph{linear} cost:
-  \[ \max_{e \ge 0}\; p(s+e+a) \;-\; \gamma e \]
+  \textbf{Question.} Can accurate agentic AI improve today's decisions while
+  eroding the human learning that sustains tomorrow's collective knowledge?
 
   \smallskip
-  \begin{itemize}\small
-    \item $p$ weakly increasing, concave, twice differentiable; $\gamma>0$.
-    \item Only constraint: $e \ge 0$ --- and it binds. That is the whole result.
-  \end{itemize}
+  A short-lived, atomistic agent chooses \(e\geq0\), taking public precision
+  \(X_t\) and agentic precision \(\tau_A\) as given. Effort produces both
+  context-specific and ``thin'' public information, but the latter is an
+  externality.
+  \[
+    Y=\sigma^{-2}+\lambda_Ie+\tau_A \tag{4}
+  \]
+  Under Assumption 1 (\(\Delta_I=0,\ \Delta_X>0\)),
+  \[
+  \max_{e\geq0}\;
+  f(0,0)+G(X_t)\Delta_G+G(X_t)G(Y)\Delta_X
+  -\frac{\varepsilon}{\varepsilon+1}e^{(\varepsilon+1)/\varepsilon}. \tag{6}
+  \]
+  \footnotesize\(G(\tau)=2\Phi(\sqrt\tau)-1\): probability that a Gaussian
+  prediction error with precision \(\tau\) lies within the success band.
 \end{frame}
 
-%================= 2. EL RESULTADO ===================================
-\begin{frame}{2 \textperiodcentered{} Proposition 2.1, with all its conditions}
-  Define $x^{*}$ as the \emph{largest} maximiser of $p(x)-\gamma x$:
-  \[ x^{*} \;=\; \max\,\arg\max_{x}\;\bigl[\,p(x)-\gamma x\,\bigr] \]
+\begin{frame}{2 \textperiodcentered{} Main result and its conditions}
+  \textbf{Observation 1 (pp. 14--15).} For positive precisions, \(\lambda_I>0\),
+  and Assumption 1,
+  \[
+  U_e=\Delta_XG(X_t)\lambda_Ig(Y)-e^{1/\varepsilon},
+  \]
+  \[
+  U_{eX}=\Delta_X\lambda_Ig(X_t)g(Y)>0,\qquad
+  U_{e\tau_A}=\Delta_XG(X_t)\lambda_Ig'(Y)<0,
+  \]
+  since \(g=G'>0\) and
+  \(g'(\tau)=-\tfrac12(1+\tau^{-1})g(\tau)<0\).
 
-  \textbf{Regularity condition} (without it $x^{*}$ need not exist):
-  \[ \limsup_{x\to\infty} \frac{p(x)}{x} \;<\; \gamma \]
+  \smallskip
+  \textbf{Mechanism.} General knowledge makes context-specific learning useful;
+  AI supplies context-specific precision directly, where returns are diminishing.
 
-  \medskip
-  \textbf{Then}
-  \[ e^{*}(s,a) = \bigl(x^{*}-s-a\bigr)_{+}, \qquad
-     p^{*}(s,a) = \max\bigl\{\,p(x^{*}),\; p(s+a)\,\bigr\} \]
-
-  \medskip
-  \footnotesize\emph{Intuition.} The agent has one target level of total input;
-  he tops it up with effort, and once skill plus AI already reach it he simply
-  stops working.
+  \smallskip
+  \textbf{Dynamic condition.} With \(\varepsilon>4\), zero knowledge is locally
+  stable; if \(\tau_A>\tau_A^c\), it is uniquely and globally stable
+  (Proposition 5). If \(\varepsilon<4\), every \(X_1>0\) converges instead to
+  the high-knowledge state (Proposition 3).
 \end{frame}
 
-%================= 3. LO QUE HICE ====================================
 \begin{frame}{3 \textperiodcentered{} What I did}
-  \textbf{Reproduced} Proposition 2.1 by hand --- the interior-versus-corner
-  split, with no differentiation in the proof (\texttt{hand/}).
-
-  \medskip
-  \textbf{Assumptions I considered relaxing}
   \begin{itemize}\small
-    \item \textbf{Linear cost $\to$ convex.} \emph{Dead end}: the authors already
-      do it in Appendix D (Props. D.3, D.6). Replication, not extension.
-    \item \textbf{Myopia.} A two-period agent who internalises skill dynamics.
-      Never relaxed anywhere in the paper --- this is the live one.
-    \item \textbf{Complementarity inside $p(\cdot)$} rather than as an added
-      interaction term. Harder: \S{}4.4 and \S{}5.3 partly pre-empt it.
+    \item Reconstructed equations (3)--(6) and the effort FOC from the May 5,
+      2026 MIT copy (69 pages), keeping equation and page references.
+    \item Derived both cross-partials from
+      \(g(\tau)=(2\pi)^{-1/2}e^{-\tau/2}\tau^{-1/2}\), including the corner
+      \(X_t=0\Rightarrow e=0\).
+    \item Traced the feedback loop:
+      \[
+      \tau_A\uparrow\Rightarrow e_t\downarrow\Rightarrow
+      X_{t+1}\downarrow\Rightarrow e_{t+1}\downarrow.
+      \]
+    \item Audited welfare: under Assumption 2,
+      \(\sigma^{-2}\geq\sqrt2-1\), Propositions 10--11 imply a finite,
+      single-peaked welfare optimum in AI precision.
+    \item Checked Section 5 and the appendix before proposing an extension:
+      aggregation, synthetic data, and effort separability are already covered;
+      the production restriction \(\Delta_I=0\) is not relaxed.
   \end{itemize}
-
-  \medskip
-  \textbf{Also produced} a full step-by-step tutorial of the paper and two
-  lecture decks (\texttt{extra/}).
 \end{frame}
 
-%================= 4. LA IA =========================================
 \begin{frame}{4 \textperiodcentered{} Where I did not believe the AI}
-  \textbf{What I asked.} ``What is the most natural extension of this model?''
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.54\textwidth}
+      \small
+      \textbf{First-pass intuition to audit:} ``More accurate information must
+      raise welfare.''
 
-  \medskip
-  \textbf{What the model answered.} Relax the linear cost $c(e)=\gamma e$ to a
-  strictly convex $c(e)$ --- presented confidently as an open direction.
+      \medskip
+      \textbf{Check.} The handwritten derivation will verify the FOC,
+      \(g'(Y)<0\), and the direct/indirect welfare decomposition:
+      \begin{align*}
+      \frac{\partial\bar U^+}{\partial\tau_A}&=DE+IE,\\
+      DE&=g(\bar Y_h)G(\bar X_h)\Delta_X\geq0,\\
+      IE&=\frac{\partial G(\bar X_h)}{\partial\tau_A}
+      [\Delta_G+G(\bar Y_h)\Delta_X]\leq0.
+      \end{align*}
 
-  \medskip
-  \textbf{My verdict: \textcolor{red}{incorrect as an extension}.}
-  \begin{itemize}\small
-    \item Appendix D is titled \emph{``Extension to convex cost functions''} and
-      redoes Sections 2--4 under strictly convex cost.
-    \item So the proposal is already in the paper. I checked the appendix
-      directly rather than taking the answer at face value.
-    \item \emph{Caveat worth keeping:} Appendix D covers \S\S{}2--4 but \textbf{not}
-      \S{}5, so convex cost applied to the skill-polarisation result is genuinely
-      untouched.
-  \end{itemize}
-
-  \medskip
-  \footnotesize The step I re-derived by hand is in \texttt{hand/} --- I did not
-  trust the algebra of the first-order condition until I had written it out.
+      \textbf{Verdict: false dynamically.} Under Assumption 2, welfare rises
+      only up to \(\tau_A^*\), then falls (Props. 10--11, p. 27).
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \IfFileExists{hand/observation-1-foc.jpg}{%
+        \includegraphics[width=\linewidth,height=.67\textheight,keepaspectratio]
+        {hand/observation-1-foc.jpg}%
+      }{%
+        \fbox{\parbox[c][.55\textheight][c]{.9\linewidth}{\centering
+        Handwritten photo pending\\[1ex]
+        \texttt{hand/observation-1-foc.jpg}}}%
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \end{document}
