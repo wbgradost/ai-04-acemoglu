@@ -1,103 +1,64 @@
-# Repository 1 — Aouad, Lykouris & Zhong (2026)
+# AI, Human Cognition and Knowledge Collapse
 
-*Human-AI Productivity Paradoxes: Modeling the Interplay of Skill, Effort, and AI Assistance*
-[arXiv:2605.11350](https://arxiv.org/abs/2605.11350) · [cs.GT]
+Acemoglu, Kong, and Ozdaglar (2026), *AI, Human Cognition and Knowledge Collapse*, NBER Working Paper 34910. This repository uses the [MIT PDF dated May 5, 2026](https://economics.mit.edu/sites/default/files/2026-05/AI%2C%20Human%20Cognition%20and%20Knowledge%20Collapse%2005-05-26.pdf), 69 pages.
 
-> **This is the worked example** for *Artificial Intelligence and Economic
-> Modeling* (UP 2026-II). It shows what a weekly repository looks like when it is
-> done well. Yours does not have to be this long — see "What is required" below.
+## Question and environment
 
----
+Can more accurate agentic AI improve decisions today yet undermine the human learning that replenishes collective knowledge? Each date has a continuum of short-lived, atomistic agents. Agent (i) must predict a common state \(\theta_t\) (general knowledge, useful throughout her community) and an iid idiosyncratic state \(\theta_{i,t}\) (knowledge specific to her current context). The common state follows a random walk, so old knowledge loses relevance unless new cohorts replenish it.
 
-## What question the paper answers
+Before seeing her private signals, the agent chooses learning effort \(e_{i,t}\geq0\), taking the inherited public precision \(X_t\), agentic-AI precision \(\tau_A\), and all technologies and prices as given. Effort creates two signals at once: a private signal about \(\theta_{i,t}\) with precision \(\lambda_I e_{i,t}\), and a thin public signal about \(\theta_t\) with precision \(\lambda_G e_{i,t}\). The latter is aggregated across the island and benefits future cohorts, but an atomistic agent does not internalize that contribution. AI supplies another private signal about \(\theta_{i,t}\) with precision \(\tau_A\). Hence individual posterior precision is
 
-When does AI assistance make a worker **less** productive?
+\[
+Y_{i,t}=\sigma^{-2}+\lambda_I e_{i,t}+\tau_A \qquad\text{(equation 4, p. 13).}
+\]
 
-The paper picks one mechanism and pushes it: AI is a **perfectly substitutable
-input**. Skill $s$, effort $e$ and assistance $a$ enter production only through
-their sum, $x = s + e + a$. Nothing else is going on — no learning, no
-complementarity, no contracting. Everything that follows comes from that single
-modelling choice plus a linear cost of effort.
+Public precision \(X_t=\operatorname{Var}(\theta_t\mid\mathcal I_t)^{-1}\) is the stock of general knowledge. With symmetric island effort \(E_t\), it evolves by the Kalman recursion
 
-## The agent's problem
+\[
+X_{t+1}^{-1}=(X_t+\lambda_G E_t)^{-1}+\Sigma^2
+\qquad\text{(equation 3, p. 13).}
+\]
 
-$$\max_{e \ge 0}\; p(s+e+a) - \gamma e$$
+## Agent's problem and Observation 1
 
-with $p$ weakly increasing, concave and twice differentiable, $\gamma > 0$, and
-one constraint that turns out to carry the whole result: $e \ge 0$.
+Output is \(f(a_G,a_I)\), where each binary argument records whether the corresponding prediction is within one unit of the truth. Define
 
-## The main result, with all its conditions
+\[
+\Delta_G=f(1,0)-f(0,0),\quad
+\Delta_I=f(0,1)-f(0,0),\quad
+\Delta_X=f(1,1)-f(1,0)-f(0,1)+f(0,0).
+\]
 
-Let $x^{*}$ be the **largest** maximiser of $p(x) - \gamma x$:
+The normalization is \(\Delta_G+\Delta_I+\Delta_X=1\). **Assumption 1** imposes \(\Delta_I=0\) and \(\Delta_X>0\): context-specific knowledge has no standalone value and the two kinds of knowledge are strictly complementary (p. 9). Bayesian predictions are posterior means (equation 5, p. 13). Writing \(G(\tau)=2\Phi(\sqrt\tau)-1\) and \(g=G'\), the within-period problem is
 
-$$x^{*} = \max \arg\max_{x} \left[\, p(x) - \gamma x \,\right]$$
+\[
+\max_{e\geq0}\; f(0,0)+G(X_t)\Delta_G
++G(X_t)G(\sigma^{-2}+\lambda_Ie+\tau_A)\Delta_X
+-\frac{\varepsilon}{\varepsilon+1}e^{(\varepsilon+1)/\varepsilon}
+\qquad\text{(equation 6, p. 14).}
+\]
 
-This requires a **regularity condition**, without which $x^{*}$ need not exist:
+Its first-order condition is
 
-$$\limsup_{x \to \infty} \frac{p(x)}{x} < \gamma$$
+\[
+\Delta_XG(X_t)\lambda_Ig(\sigma^{-2}+\lambda_Ie+\tau_A)=e^{1/\varepsilon}
+\qquad\text{(p. 15).}
+\]
 
-**Proposition 2.1.** Under those conditions,
+The left side falls in effort because \(g'(\tau)=-\tfrac12(1+\tau^{-1})g(\tau)<0\); marginal cost rises, so the optimum is unique (interior for \(X_t>0\), and \(e=0\) at \(X_t=0\)). Differentiating the marginal payoff—not merely asserting signs—gives Observation 1:
 
-$$e^{*}(s,a) = \left(x^{*} - s - a\right)_{+}, \qquad
-  p^{*}(s,a) = \max\left\{ p(x^{*}),\, p(s+a) \right\}$$
+\[
+U_{eX}=\Delta_X\lambda_Ig(X_t)g(Y_{i,t})>0,
+\qquad
+U_{e\tau_A}=\Delta_XG(X_t)\lambda_Ig'(Y_{i,t})<0.
+\]
 
-*Intuition in one sentence:* the agent has a single target level of total input,
-tops it up with effort, and once skill plus AI already reach it he stops working.
+Thus general knowledge complements effort: it raises the payoff from improving the context-specific prediction. Agentic AI substitutes for effort: it supplies the same type of precision and diminishing returns to precision reduce the marginal value of learning. The strict signs use positive precisions, \(\lambda_I>0\), and Assumption 1; the zero-knowledge boundary is the corner described above.
 
-Two things worth noticing about the proof. It is a **case split** — interior
-versus corner — and contains **no differentiation at all**; and the largest-argmax
-tie-break is not decoration, it is what makes $e^{*}$ well defined when
-$p(x)-\gamma x$ has a flat maximum.
+## Dynamic result and welfare
 
-## Sections 3–5: stated, not derived
+In symmetric equilibrium \(E_t=I e(X_t,\tau_A)\), so AI precision \(\uparrow\) \(\Rightarrow\) effort \(\downarrow\) \(\Rightarrow\) new general knowledge \(\downarrow\) \(\Rightarrow X_{t+1}\downarrow\) \(\Rightarrow\) future effort \(\downarrow\) (equations 7--8, p. 16). When effort supply is inelastic enough (\(\varepsilon<4\)), zero knowledge is unstable and every \(X_1>0\) converges to the high-knowledge steady state (Proposition 3). When \(\varepsilon>4\), zero is locally stable; below the endogenous threshold \(\tau_A^c\), initial knowledge selects between collapse and the high state, while above \(\tau_A^c\) the zero-knowledge state is uniquely and globally stable (Proposition 5, pp. 21--22).
 
-The three headline results — the deskilling paradox, the unreliability paradox
-and skill polarisation — use machinery well beyond Section 2: a continuous-time
-birth–death Markov chain and its steady state, Arrow–Pratt risk aversion applied
-to a *production* function with IARA/DARA driving the sign, and Bayesian updating
-over a binary signal. They are worth understanding; they are not worth trying to
-reproduce in a week. See `extra/tutorial-alz-completo.pdf` for the full walk.
+Welfare is not generally increasing in AI accuracy. At the high steady state, higher \(\tau_A\) gives a direct gain in idiosyncratic precision but an indirect loss through lower \(\bar X_h\) (p. 26). Under Assumption 2, \(\sigma^{-2}\geq\sqrt2-1\), welfare is single-peaked: Proposition 10 covers \(\varepsilon<4\); Proposition 11 covers \(\varepsilon>4\) and adds the discontinuous fall to zero after \(\tau_A^c\) (p. 27). By contrast, welfare is strictly increasing in aggregation capacity \(I\) whenever the high-knowledge steady state exists (Proposition 9, p. 25).
 
----
-
-## What is in this repository
-
-| File | What it is |
-|---|---|
-| `README.md` | This page |
-| `prompts.md` | The full LLM conversation, unedited |
-| `extensions.md` | Which assumptions could be relaxed, and which are dead ends |
-| `hand/` | The derivation of Proposition 2.1, written out by hand |
-| `presentation.tex` / `.pdf` | The 5-minute Beamer deck |
-| `paper/` | The article itself |
-| `extra/` | Above the floor: a full tutorial of the paper and two lecture decks |
-
-## What is required
-
-Only four things. The rest of this repository is above the floor.
-
-1. **`README.md`** — one page: the question, the agent's problem, the main result
-   **with all its conditions**.
-2. **`prompts.md`** — your prompts and the answers, **raw**. Do not tidy them up:
-   the value is in seeing where the model went wrong.
-3. **`hand/`** — at least one photograph of something you derived by hand. Not the
-   whole paper: the one step you did not believe until you did it yourself.
-4. **`presentation.tex` / `.pdf`** — the 5-minute deck, source and compiled.
-
-Deadline is **Tuesday 22:00**, work merged into `main` through a pull request,
-and the repository URL posted as a comment on that week's issue.
-
-## About `hand/`
-
-`hand/prop-2-1-derivacion-a-mano.pdf` is three phone photos of a notebook page.
-That is exactly the standard: crooked, with crossings-out, no transcription. What
-it shows is the first-order condition and the interior-versus-corner split written
-out step by step — the part I did not want to take on trust.
-
-## About the LLM conversation
-
-`prompts.md` is the export of the session that produced the tutorial in `extra/`.
-Read it for what it gets wrong as much as for what it gets right. The episode
-worth studying is on slide 4 of the presentation: asked for "the most natural
-extension", the model confidently proposed relaxing the linear cost — which the
-authors had already done in Appendix D. It took opening the appendix to find out.
+`hand/observation-1-foc.jpg` is pending. It will contain the handwritten FOC and the two cross-partials above; no synthetic handwriting is included.
