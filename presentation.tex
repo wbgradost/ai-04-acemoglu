@@ -94,33 +94,37 @@
 
 \begin{frame}{4 \textperiodcentered{} Where I did not believe the AI}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.54\textwidth}
+    \begin{column}{0.48\textwidth}
       \small
-      \textbf{First-pass intuition to audit:} ``More accurate information must
-      raise welfare.''
+      \textbf{AI claim audited:} ``Public precision complements effort, while
+      agentic-AI precision substitutes for effort.''
 
       \medskip
-      \textbf{Check.} The handwritten derivation will verify the FOC,
-      \(g'(Y)<0\), and the direct/indirect welfare decomposition:
-      \begin{align*}
-      \frac{\partial\bar U^+}{\partial\tau_A}&=DE+IE,\\
-      DE&=g(\bar Y_h)G(\bar X_h)\Delta_X\geq0,\\
-      IE&=\frac{\partial G(\bar X_h)}{\partial\tau_A}
-      [\Delta_G+G(\bar Y_h)\Delta_X]\leq0.
-      \end{align*}
+      \textbf{Check by hand.} Starting from equations (4) and (6), I derived
+      the effort FOC and then differentiated the marginal payoff:
+      \[
+        U_{eX}=\Delta_X\lambda_Ig(X_t)g(Y)>0,
+      \]
+      \[
+        U_{e\tau_A}=\Delta_XG(X_t)\lambda_Ig'(Y)<0,
+      \]
+      because
+      \(g'(z)=-(z+1)\phi(\sqrt z)/(2z^{3/2})<0\).
 
-      \textbf{Verdict: false dynamically.} Under Assumption 2, welfare rises
-      only up to \(\tau_A^*\), then falls (Props. 10--11, p. 27).
+      \medskip
+      \textbf{Verdict: confirmed, with a boundary.} The strict signs hold for
+      positive precisions under Assumption 1; at \(X_t=0\), optimal effort is
+      the corner \(e=0\) (Observation 1, pp. 14--15).
     \end{column}
-    \begin{column}{0.42\textwidth}
+    \begin{column}{0.49\textwidth}
       \centering
-      \IfFileExists{hand/observation-1-foc.jpg}{%
-        \includegraphics[width=\linewidth,height=.67\textheight,keepaspectratio]
-        {hand/observation-1-foc.jpg}%
+      \IfFileExists{hand/observation-1.jpeg}{%
+        \includegraphics[width=\linewidth,height=.72\textheight,keepaspectratio]
+        {hand/observation-1.jpeg}%
       }{%
         \fbox{\parbox[c][.55\textheight][c]{.9\linewidth}{\centering
         Handwritten photo pending\\[1ex]
-        \texttt{hand/observation-1-foc.jpg}}}%
+        \texttt{hand/observation-1.jpeg}}}%
       }
     \end{column}
   \end{columns}

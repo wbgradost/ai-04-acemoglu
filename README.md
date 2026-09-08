@@ -61,4 +61,4 @@ In symmetric equilibrium \(E_t=I e(X_t,\tau_A)\), so AI precision \(\uparrow\) \
 
 Welfare is not generally increasing in AI accuracy. At the high steady state, higher \(\tau_A\) gives a direct gain in idiosyncratic precision but an indirect loss through lower \(\bar X_h\) (p. 26). Under Assumption 2, \(\sigma^{-2}\geq\sqrt2-1\), welfare is single-peaked: Proposition 10 covers \(\varepsilon<4\); Proposition 11 covers \(\varepsilon>4\) and adds the discontinuous fall to zero after \(\tau_A^c\) (p. 27). By contrast, welfare is strictly increasing in aggregation capacity \(I\) whenever the high-knowledge steady state exists (Proposition 9, p. 25).
 
-`hand/observation-1-foc.jpg` is pending. It will contain the handwritten FOC and the two cross-partials above; no synthetic handwriting is included.
+[`hand/observation-1.jpeg`](hand/observation-1.jpeg) contains the handwritten reconstruction of the FOC, both cross-partials, and the sign of $g'$. The photograph is the author's original work; no synthetic handwriting is included.

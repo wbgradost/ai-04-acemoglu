@@ -314,3 +314,179 @@ para precisiones positivas, usando \(\Delta_X>0\) y \(\lambda_I>0\). No es solo 
 ## Assistant
 
 La lectura dirigida queda cerrada. Welfare no es monótono en precisión agentic: bajo Assumption 2, \(\sigma^{-2}\ge\sqrt2-1\), Propositions 10–11 dan un máximo finito \(\tau_A^*\); en el régimen \(\varepsilon>4\), además, al superar \(\tau_A^c\) desaparece el steady state alto y welfare cae a cero. Section 5 relaja, respectivamente: agregación fija en 5.1 mediante \(I(\tau_A)\); dependencia exclusiva de conocimiento general en esfuerzo humano en 5.2 mediante precisión sintética \(\tau_{\rm syn}\); y producción conjunta uno-a-uno de ambos tipos de información en 5.3 mediante \(e^\beta\). La sustitución estática de esfuerzo por precisión contextual y la complementariedad productiva del baseline permanecen.
+
+## User
+
+Explícame con detalle el resultado de welfare respecto de tau_A. Quiero entender qué ocurre cuando aumenta la precisión de la IA, qué fuerzas compiten y exactamente qué condiciones ponen las propositions relevantes
+
+## User
+
+Ahora contrasta cuidadosamente cada afirmación de tu respuesta anterior directamente con Section 4 del PDF que estamos utilizando.
+
+No quiero una nueva explicación general. Quiero una auditoría de lo que acabas de afirmar.
+
+Usa como fuente primaria la copia MIT del paper que ya identificamos y verifica directamente el texto, ecuaciones y propositions correspondientes.
+
+Revisa especialmente:
+
+- la definición exacta de welfare;
+- la derivada respecto de tau_A y su descomposición;
+- qué términos son positivos o negativos y por qué;
+- qué papel juega el envelope theorem;
+- qué afirma exactamente Assumption 2;
+- las condiciones exactas de Propositions 10 y 11;
+- si tau_A* puede ser cero;
+- qué ocurre cuando tau_A tiende a infinito;
+- la diferencia entre welfare del high steady state y welfare efectivamente realizado cuando hay múltiples steady states;
+- qué afirma el paper en tau_A = tau_A^c y qué deja sin caracterizar.
+
+Para cada punto que hayas afirmado anteriormente, clasifícalo como:
+
+CONFIRMED
+si está respaldado directamente por Section 4;
+
+NEEDS QUALIFICATION
+si la idea es correcta pero tu formulación fue más fuerte que lo que demuestra el paper;
+
+CORRECTION
+si tu respuesta anterior fue incorrecta.
+
+Incluye para cada corrección o qualification:
+
+- proposition/equation correspondiente;
+- página del PDF;
+- formulación exacta que deberíamos conservar para el trabajo.
+
+No defiendas automáticamente tu respuesta anterior y no rellenes silenciosamente lagunas con intuición económica.
+
+Al final dame solamente:
+
+1. Qué partes de tu respuesta original sobreviven sin cambios.
+2. Qué partes deben matizarse.
+3. Qué partes eran incorrectas.
+4. Una respuesta final de máximo 8 líneas a:
+
+“¿Aumenta el welfare cuando aumenta la precisión de agentic AI?”
+
+Esa respuesta final debe contener todas las condiciones necesarias para que sea defendible frente al paper.
+
+## Assistant
+
+1. **Sobrevive sin cambios:** welfare combina productividad informada y costo de effort; \(d\bar U^+/d\tau_A=DE-IE\); el efecto directo es positivo, el efecto dinámico vía \(\bar X_h\) es negativo; Propositions 10–11 implican un perfil single-peaked bajo sus assumptions; el welfare realizado depende de la cuenca de atracción cuando \(\varepsilon>4\).
+
+2. **Debe matizarse:** \(\bar Y_h\) no siempre aumenta; \(\tau_A^*\) puede ser cero; “unique steady state” debe sustituirse por high-state attractor para \(X_1>0\); el envelope theorem no identifica un tercer efecto separado; la igualdad en \(\tau_A^c\) aparece en el texto, pero no queda formalizada separadamente en Proposition 11.
+
+3. **Era incorrecto:** presentar Assumption 2 como necesaria. Es una condición suficiente impuesta para la caracterización de Propositions 10–11.
+
+4. **¿Aumenta el welfare cuando aumenta la precisión de agentic AI?**
+No necesariamente. Bajo Assumption 2, aumenta solo para \(0<\tau_A<\tau_A^*\), si \(\tau_A^*>0\).
+Disminuye después porque el crowding-out de effort y general knowledge domina el beneficio directo.
+Si \(\varepsilon<4\), \(\bar U^+\to0\) cuando \(\tau_A\to\infty\).
+Si \(\varepsilon>4\), \(\tau_A^*<\tau_A^c\), y cruzar \(\tau_A^c\) produce collapse y welfare cero.
+Con múltiples steady states, esto describe \(\bar U^+\); el welfare realizado también depende de \(X_1\).
+
+## User
+
+Ahora revisemos Section 5 directamente en el PDF.
+
+Quiero saber, de forma breve y precisa:
+
+- qué relaja 5.1;
+- qué relaja 5.2;
+- qué relaja 5.3;
+- qué assumptions del baseline siguen vigentes;
+- y si hay alguna assumption de producción que los autores mantengan durante todo el paper sin relajarla.
+
+Para cada punto dame la página y la ecuación o assumption relevante.
+
+Distingue entre algo que los autores realmente relajan, algo que solo discuten y algo que permanece asumido.
+
+Al final resume en este formato:
+
+5.1:
+[...]
+
+5.2:
+[...]
+
+5.3:
+[...]
+
+ASSUMPTIONS QUE SIGUEN VIGENTES:
+[...]
+
+ASSUMPTION NO RELAJADA:
+[...]
+
+POSIBLE EXTENSIÓN:
+[solo una, y que no esté ya cubierta por el paper]
+
+## Assistant
+
+Fuente: [copia MIT, May 5, 2026](https://economics.mit.edu/sites/default/files/2026-05/AI,%20Human%20Cognition%20and%20Knowledge%20Collapse%2005-05-26.pdf).
+
+**5.1:**
+Relaja realmente el supuesto de que agentic AI solo aporta información context-specific y no mejora la agregación de general knowledge. Sustituye el \(I\) fijo por
+
+\[
+I(\tau_A)=I_0+\exp(\eta\tau_A).
+\tag{11}
+\]
+
+Así, \(\tau_A\) combina sustitución de effort y mejor agregación. Proposition 14 conserva el resultado de desaparición de \(\bar X_h\) y un óptimo finito solo si \(\eta<\varepsilon/2\). Lo demás permanece sin cambios. pp. 30–31, ecuación (11), Proposition 14.
+
+**5.2:**
+Relaja realmente que todo nuevo general knowledge provenga del effort humano: añade una señal sintética exógena de precisión \(\tau_{\mathrm{syn}}\):
+
+\[
+X_{t+1}^{-1}
+=
+(X_t+\lambda_GE_t+\tau_{\mathrm{syn}})^{-1}+\Sigma^2.
+\tag{12}
+\]
+
+El mapa correspondiente es (13). Si \(0<\tau_{\mathrm{syn}}<\infty\), cero deja de ser steady state y aparece un low-knowledge state positivo; el crowding-out por \(\tau_A\) permanece. La sustitución perfecta \(\tau_{\mathrm{syn}}=\infty\) solo se discute como límite y no está cubierta por Proposition 15. pp. 31–33, ecuaciones (12)–(13), Proposition 15.
+
+**5.3:**
+Relaja realmente el acoplamiento lineal idéntico con el que un único effort produce ambos tipos de conocimiento. Mantiene private precision \(\lambda_Ie\), pero cambia la contribución pública a
+
+\[
+\lambda_G e^\beta,\qquad
+E_{m,t}^{(\beta)}=\int_{\mathcal I_m}e_{i,t}^{\beta}di,
+\tag{14}
+\]
+
+donde menor \(\beta\) significa mayor separabilidad. No introduce dos esfuerzos ni una elección explícita de “dirección”; eso solo se motiva verbalmente. Para \(\beta>0\), Proposition 16 conserva los resultados reemplazando \(\varepsilon<4\) por \(\varepsilon<4/\beta\). \(\beta=0\) se describe como límite perfectamente separable, pero queda fuera de la proposition. pp. 33–34, ecuación (14), Proposition 16.
+
+**ASSUMPTIONS QUE SIGUEN VIGENTES:**
+Las extensiones se estudian por separado, no acumulativamente. Salvo el margen modificado en cada subsección, permanecen el agente atomístico y short-lived, señales gaussianas y actualización bayesiana, el AI signal context-specific \(s^A_{i,t}\sim N(\theta_{i,t},\tau_A^{-1})\), private precision \(\lambda_Ie\), el mismo costo \(\frac{\varepsilon}{\varepsilon+1}e^{(\varepsilon+1)/\varepsilon}\), y el externality de public learning. Baseline pp. 7–14, ecuaciones (1)–(6); confirmaciones explícitas pp. 31–33.
+
+**ASSUMPTION NO RELAJADA:**
+Assumption 1 se mantiene “throughout”:
+
+\[
+\Delta_I=0,\qquad \Delta_X>0.
+\]
+
+Por tanto, context-specific knowledge solo no genera valor y general/context-specific knowledge conservan complementariedad estricta. p. 9, Assumption 1 y ecuación (6). Ninguna parte de Section 5 ni del appendix estudia \(\Delta_I>0\).
+
+**POSIBLE EXTENSIÓN:**
+Relajar Assumption 1 permitiendo \(\Delta_I>0\): medir cuánto valor conserva la recomendación context-specific cuando general knowledge colapsa y si el estado \(X=0\) sigue siendo económicamente un “knowledge collapse” con welfare cero.
+
+## User
+
+Ya guardé mi derivación manuscrita en:
+
+hand/observation-1.jpeg
+
+Revísala contra Observation 1 y las ecuaciones relevantes del paper. No edites ni sustituyas la imagen.
+
+Si está correcta, intégrala en la slide “Where I did not believe the AI” y continúa con README.md, prompts.md, presentation.tex y presentation.pdf.
+
+Haz commit y push en analysis, pero detente antes del PR.
+
+## Assistant
+
+Primero verificaré la rama y el estado del repositorio, luego compararé visualmente la derivación con las ecuaciones de Observation 1. Solo la integraré si los signos y pasos algebraicos son correctos; la imagen quedará intacta.
+
+La derivación es correcta: parte de \(Y_{i,t}=\sigma^{-2}+\lambda_Ie_{i,t}+\tau_A\), obtiene la FOC del paper y demuestra ambos cross-partials con los signos correctos. También verifica correctamente \(g'(z)=-(z+1)\phi(\sqrt z)/(2z^{3/2})<0\). Ahora revisaré el encaje en la slide y la consistencia final de los tres archivos.
