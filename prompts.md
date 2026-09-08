@@ -296,24 +296,29 @@ La fuente principal ya está verificada: copia MIT de 69 páginas, fechada el 5 
 
 ## Assistant
 
-La reconstrucción algebraica que usaré es esta. Con \(Y_{i,t}=\sigma^{-2}+\lambda_I e_{i,t}+\tau_A\), \(G(\tau)=2\Phi(\sqrt{\tau})-1\) y \(g(\tau)=G'(\tau)=\phi(\sqrt{\tau})/\sqrt{\tau}>0\), la ecuación (6) da
-\[
+La reconstrucción algebraica que usaré es esta. Con $Y_{i,t}=\sigma^{-2}+\lambda_I e_{i,t}+\tau_A$, $G(\tau)=2\Phi(\sqrt{\tau})-1$ y $g(\tau)=G'(\tau)=\phi(\sqrt{\tau})/\sqrt{\tau}>0$, la ecuación (6) da
+
+$$
 U_{i,t}=f(0,0)+G(X_t)\Delta_G+G(X_t)G(Y_{i,t})\Delta_X-\frac{\varepsilon}{\varepsilon+1}e_{i,t}^{(\varepsilon+1)/\varepsilon}.
-\]
+$$
+
 Por tanto,
-\[
+
+$$
 U_e=\Delta_XG(X_t)\lambda_Ig(Y_{i,t})-e_{i,t}^{1/\varepsilon}.
-\]
-Como \(g'(\tau)=-\tfrac12(1+\tau^{-1})g(\tau)<0\),
-\[
-U_{eX}=\Delta_X\lambda_Ig(X_t)g(Y_{i,t})>0,\qquad
-U_{e\tau_A}=\Delta_XG(X_t)\lambda_Ig'(Y_{i,t})<0
-\]
-para precisiones positivas, usando \(\Delta_X>0\) y \(\lambda_I>0\). No es solo una comparación de signos: más \(X_t\) eleva el retorno de acertar el contexto porque ambos aciertos son productivamente complementarios; más \(\tau_A\) ya entrega la misma precisión contextual que produciría el esfuerzo, y los retornos de \(G\) a la precisión son decrecientes. En \(X_t=0\), la complementariedad no produce valor y el óptimo es \(e=0\). Esta será también la comprobación propuesta para la futura foto manuscrita.
+$$
+
+Como $g'(\tau)=-\tfrac12(1+\tau^{-1})g(\tau)<0$,
+
+$$
+U_{eX}=\Delta_X\lambda_Ig(X_t)g(Y_{i,t})>0,\qquad U_{e\tau_A}=\Delta_XG(X_t)\lambda_Ig'(Y_{i,t})<0
+$$
+
+para precisiones positivas, usando $\Delta_X>0$ y $\lambda_I>0$. No es solo una comparación de signos: más $X_t$ eleva el retorno de acertar el contexto porque ambos aciertos son productivamente complementarios; más $\tau_A$ ya entrega la misma precisión contextual que produciría el esfuerzo, y los retornos de $G$ a la precisión son decrecientes. En $X_t=0$, la complementariedad no produce valor y el óptimo es $e=0$. Esta será también la comprobación propuesta para la futura foto manuscrita.
 
 ## Assistant
 
-La lectura dirigida queda cerrada. Welfare no es monótono en precisión agentic: bajo Assumption 2, \(\sigma^{-2}\ge\sqrt2-1\), Propositions 10–11 dan un máximo finito \(\tau_A^*\); en el régimen \(\varepsilon>4\), además, al superar \(\tau_A^c\) desaparece el steady state alto y welfare cae a cero. Section 5 relaja, respectivamente: agregación fija en 5.1 mediante \(I(\tau_A)\); dependencia exclusiva de conocimiento general en esfuerzo humano en 5.2 mediante precisión sintética \(\tau_{\rm syn}\); y producción conjunta uno-a-uno de ambos tipos de información en 5.3 mediante \(e^\beta\). La sustitución estática de esfuerzo por precisión contextual y la complementariedad productiva del baseline permanecen.
+La lectura dirigida queda cerrada. Welfare no es monótono en precisión agentic: bajo Assumption 2, $\sigma^{-2}\ge\sqrt2-1$, Propositions 10–11 dan un máximo finito $\tau_A^{*}$; en el régimen $\varepsilon>4$, además, al superar $\tau_A^c$ desaparece el steady state alto y welfare cae a cero. Section 5 relaja, respectivamente: agregación fija en 5.1 mediante $I(\tau_A)$; dependencia exclusiva de conocimiento general en esfuerzo humano en 5.2 mediante precisión sintética $\tau_{\rm syn}$; y producción conjunta uno-a-uno de ambos tipos de información en 5.3 mediante $e^\beta$. La sustitución estática de esfuerzo por precisión contextual y la complementariedad productiva del baseline permanecen.
 
 ## User
 
@@ -380,74 +385,47 @@ Fuente primaria: copia MIT de 69 páginas, fechada May 5, 2026: [Acemoglu, Kong 
 
 **CONFIRMED.**
 
-En la p. 24, para cualquier steady state \((\bar X,\bar e,\bar Y)\), el paper define el welfare de la cohorte representativa como
+En la p. 24, para cualquier steady state $(\bar X,\bar e,\bar Y)$, el paper define el welfare de la cohorte representativa como
 
-\[
-\bar U
-=
-G(\bar X)\Delta_G
-+
-G(\bar X)G(\bar Y)\Delta_X
--
-\frac{\varepsilon}{\varepsilon+1}
-\bar e^{(\varepsilon+1)/\varepsilon}.
-\]
+$$
+\bar U = G(\bar X)\Delta_G + G(\bar X)G(\bar Y)\Delta_X - \frac{\varepsilon}{\varepsilon+1} \bar e^{(\varepsilon+1)/\varepsilon}.
+$$
 
-Se omite la constante \(f(0,0)\), por lo que welfare se mide respecto del benchmark sin información. Bajo Assumption 1, el estado de knowledge collapse, \((\bar X,\bar e)=(0,0)\), tiene welfare normalizado a cero.
+Se omite la constante $f(0,0)$, por lo que welfare se mide respecto del benchmark sin información. Bajo Assumption 1, el estado de knowledge collapse, $(\bar X,\bar e)=(0,0)$, tiene welfare normalizado a cero.
 
-Para un \(\bar X\) dado, la ecuación (10), p. 24, escribe:
+Para un $\bar X$ dado, la ecuación (10), p. 24, escribe:
 
-\[
-\bar U(\bar X,\tau_A)
-=
-G(\bar X)\Delta_G+
-\max_{e'\geq0}
-\left\{
-G(\sigma^{-2}+\lambda_Ie'+\tau_A)
-G(\bar X)\Delta_X
--
-\frac{\varepsilon}{\varepsilon+1}(e')^{(\varepsilon+1)/\varepsilon}
-\right\}.
-\]
+$$
+\bar U(\bar X,\tau_A) = G(\bar X)\Delta_G+ \max_{e'\geq0} \left\{ G(\sigma^{-2}+\lambda_Ie'+\tau_A) G(\bar X)\Delta_X - \frac{\varepsilon}{\varepsilon+1}(e')^{(\varepsilon+1)/\varepsilon} \right\}.
+$$
 
-\(\bar U^+\) designa este welfare evaluado en el high steady state \(\bar X_h\).
+$\bar U^+$ designa este welfare evaluado en el high steady state $\bar X_h$.
 
 ---
 
-### 2. Derivada respecto de \(\tau_A\)
+### 2. Derivada respecto de $\tau_A$
 
 **CONFIRMED.**
 
 La descomposición de la p. 26 es
 
-\[
-\frac{\partial\bar U^+}{\partial\tau_A}
-=
-\underbrace{g(\bar Y_h)G(\bar X_h)\Delta_X}_{\text{Direct Effect}\geq0}
-+
-\underbrace{
-\frac{\partial G(\bar X_h)}{\partial\tau_A}
-\left[\Delta_G+G(\bar Y_h)\Delta_X\right]
-}_{\text{Indirect Effect}\leq0}.
-\]
+$$
+\frac{\partial\bar U^+}{\partial\tau_A} = \underbrace{g(\bar Y_h)G(\bar X_h)\Delta_X}_{\text{Direct Effect}\geq0} + \underbrace{ \frac{\partial G(\bar X_h)}{\partial\tau_A} \left[\Delta_G+G(\bar Y_h)\Delta_X\right] }_{\text{Indirect Effect}\leq0}.
+$$
 
 Por tanto, mi afirmación de que una mayor precisión de AI tiene un efecto directo beneficioso y un efecto indirecto perjudicial sobre welfare está respaldada directamente.
 
 El paper redefine la magnitud positiva de la pérdida indirecta como
 
-\[
-IE=
--\frac{\partial G(\bar X_h)}{\partial\tau_A}
-\left[\Delta_G+G(\bar Y_h)\Delta_X\right],
-\]
+$$
+IE= -\frac{\partial G(\bar X_h)}{\partial\tau_A} \left[\Delta_G+G(\bar Y_h)\Delta_X\right],
+$$
 
 y concluye que
 
-\[
-\frac{\partial\bar U^+}{\partial\tau_A}>0
-\quad\Longleftrightarrow\quad
-DE>IE.
-\]
+$$
+\frac{\partial\bar U^+}{\partial\tau_A}>0 \quad\Longleftrightarrow\quad DE>IE.
+$$
 
 ---
 
@@ -455,8 +433,8 @@ DE>IE.
 
 **CONFIRMED.**
 
-- \(DE\geq0\): manteniendo constantes effort y public precision, más \(\tau_A\) eleva la precisión context-specific \(\bar Y_h\) y mejora directamente las decisiones.
-- \(IE\leq0\): una mayor \(\tau_A\) desplaza effort humano; esto reduce la producción de general knowledge y, por tanto, \(\bar X_h\). Como \(\bar X_h\) mejora tanto el componente general como el context-specific, su caída reduce welfare.
+- $DE\geq0$: manteniendo constantes effort y public precision, más $\tau_A$ eleva la precisión context-specific $\bar Y_h$ y mejora directamente las decisiones.
+- $IE\leq0$: una mayor $\tau_A$ desplaza effort humano; esto reduce la producción de general knowledge y, por tanto, $\bar X_h$. Como $\bar X_h$ mejora tanto el componente general como el context-specific, su caída reduce welfare.
 
 Esta cadena está respaldada por la discusión de pp. 25–26 y por los resultados previos de comparative statics que Section 4 utiliza.
 
@@ -468,9 +446,9 @@ Esta cadena está respaldada por la discusión de pp. 25–26 y por los resultad
 
 Mi explicación anterior decía que el ahorro de costos generado por menor effort quedaba “exactamente compensado” por la pérdida privada de información. Esa es una interpretación de la FOC, pero es más específica que la formulación de Section 4.
 
-Lo que el paper establece directamente es que, al diferenciar el problema maximizado de la ecuación (10), aplica el envelope theorem. Por eso la respuesta del effort óptimo, \(d\bar e_h/d\tau_A\), no aparece como un término independiente de primer orden en la derivada.
+Lo que el paper establece directamente es que, al diferenciar el problema maximizado de la ecuación (10), aplica el envelope theorem. Por eso la respuesta del effort óptimo, $d\bar e_h/d\tau_A$, no aparece como un término independiente de primer orden en la derivada.
 
-**Conservar para el trabajo:** “El envelope theorem elimina el efecto de primer orden de la variación del effort optimizado; la derivada de welfare queda dividida entre el beneficio informacional directo de \(\tau_A\) y el efecto indirecto que opera mediante la caída de \(\bar X_h\).”
+**Conservar para el trabajo:** “El envelope theorem elimina el efecto de primer orden de la variación del effort optimizado; la derivada de welfare queda dividida entre el beneficio informacional directo de $\tau_A$ y el efecto indirecto que opera mediante la caída de $\bar X_h$.”
 Ecuación (10) y descomposición posterior, pp. 24 y 26.
 
 ---
@@ -479,22 +457,22 @@ Ecuación (10) y descomposición posterior, pp. 24 y 26.
 
 **NEEDS QUALIFICATION.**
 
-Como efecto parcial, manteniendo effort fijo, una mayor \(\tau_A\) eleva \(Y=\sigma^{-2}+\lambda_Ie+\tau_A\). Pero esto no implica que la precisión de equilibrio \(\bar Y_h\) siempre aumente.
+Como efecto parcial, manteniendo effort fijo, una mayor $\tau_A$ eleva $Y=\sigma^{-2}+\lambda_Ie+\tau_A$. Pero esto no implica que la precisión de equilibrio $\bar Y_h$ siempre aumente.
 
-Para \(\varepsilon>4\), Proposition 8 establece que existe \(0\leq\widehat\tau_A<\tau_A^c\) tal que \(\bar Y_h\) aumenta hasta \(\widehat\tau_A\) y disminuye después. Cerca del collapse threshold, el desplazamiento del effort puede dominar incluso el incremento mecánico de \(\tau_A\).
+Para $\varepsilon>4$, Proposition 8 establece que existe $0\leq\widehat\tau_A<\tau_A^c$ tal que $\bar Y_h$ aumenta hasta $\widehat\tau_A$ y disminuye después. Cerca del collapse threshold, el desplazamiento del effort puede dominar incluso el incremento mecánico de $\tau_A$.
 
-**Conservar para el trabajo:** “El efecto directo parcial de \(\tau_A\), manteniendo effort y public knowledge constantes, es positivo; la precisión context-specific total de equilibrio no tiene por qué aumentar monotónicamente cuando \(\varepsilon>4\).”
+**Conservar para el trabajo:** “El efecto directo parcial de $\tau_A$, manteniendo effort y public knowledge constantes, es positivo; la precisión context-specific total de equilibrio no tiene por qué aumentar monotónicamente cuando $\varepsilon>4$.”
 Proposition 8, pp. 23–24; derivada de welfare, p. 26.
 
 ---
 
-### 6. Debilitamiento del beneficio directo y cruce \(DE=IE\)
+### 6. Debilitamiento del beneficio directo y cruce $DE=IE$
 
 **NEEDS QUALIFICATION.**
 
-Section 4 afirma que, bajo restricciones regulares del espacio de parámetros, \(IE/DE\) aumenta con \(\tau_A\) y es mayor que uno para \(\tau_A\) suficientemente grande. Pero no debemos describir necesariamente un cruce interior: Propositions 10 y 11 permiten explícitamente \(\tau_A^*=0\).
+Section 4 afirma que, bajo restricciones regulares del espacio de parámetros, $IE/DE$ aumenta con $\tau_A$ y es mayor que uno para $\tau_A$ suficientemente grande. Pero no debemos describir necesariamente un cruce interior: Propositions 10 y 11 permiten explícitamente $\tau_A^{*}=0$.
 
-**Conservar para el trabajo:** “Bajo Assumption 2 existe un umbral de welfare \(\tau_A^*\), posiblemente igual a cero: welfare aumenta antes del umbral si ese intervalo es no vacío y disminuye después.”
+**Conservar para el trabajo:** “Bajo Assumption 2 existe un umbral de welfare $\tau_A^{*}$, posiblemente igual a cero: welfare aumenta antes del umbral si ese intervalo es no vacío y disminuye después.”
 Propositions 10–11, p. 27.
 
 ---
@@ -505,101 +483,101 @@ Propositions 10–11, p. 27.
 
 La assumption exacta es
 
-\[
+$$
 \boxed{\sigma^{-2}\geq\sqrt{2}-1}.
-\]
+$$
 
 Mi descripción de Assumption 2 como una condición “necesaria” para single-peakedness era incorrecta. El paper la introduce por conveniencia expositiva y explica en la nota 17 que descarta perfiles no single-peaked en los cuales la derivada cambia de signo dos veces. Demuestra sus propositions bajo esa condición, pero no prueba que sea necesaria.
 
-La equivalencia \(\sigma^2\leq\sqrt2+1\) es algebraicamente válida para \(\sigma^2>0\), pero no es la formulación empleada por los autores.
+La equivalencia $\sigma^2\leq\sqrt2+1$ es algebraicamente válida para $\sigma^2>0$, pero no es la formulación empleada por los autores.
 
-**Conservar para el trabajo:** “Assumption 2, \(\sigma^{-2}\geq\sqrt2-1\), es una condición suficiente impuesta para obtener la caracterización single-peaked; el paper no demuestra que sea necesaria.”
+**Conservar para el trabajo:** “Assumption 2, $\sigma^{-2}\geq\sqrt2-1$, es una condición suficiente impuesta para obtener la caracterización single-peaked; el paper no demuestra que sea necesaria.”
 Assumption 2 y nota 17, p. 27.
 
 ---
 
-### 8. Proposition 10: \(\varepsilon<4\)
+### 8. Proposition 10: $\varepsilon<4$
 
 **CONFIRMED**, con una precisión terminológica.
 
-Bajo \(\varepsilon<4\) y Assumption 2, existe un umbral finito
+Bajo $\varepsilon<4$ y Assumption 2, existe un umbral finito
 
-\[
-0\leq\tau_A^*<\infty
-\]
+$$
+0\leq\tau_A^{*}<\infty
+$$
 
 tal que:
 
-\[
-\bar U^+\text{ aumenta estrictamente en }(0,\tau_A^*),
-\]
+$$
+\bar U^+\text{ aumenta estrictamente en }(0,\tau_A^{*}),
+$$
 
-\[
-\bar U^+\text{ disminuye estrictamente en }(\tau_A^*,\infty),
-\]
+$$
+\bar U^+\text{ disminuye estrictamente en }(\tau_A^{*},\infty),
+$$
 
 y
 
-\[
+$$
 \lim_{\tau_A\to\infty}\bar U^+=0.
-\]
+$$
 
-La precisión terminológica es que existe también el steady state de collapse. Lo correcto es decir que, para \(X_1>0\), el high steady state es el único attractor relevante, no que sea literalmente el único steady state del sistema. Proposition 10, p. 27.
+La precisión terminológica es que existe también el steady state de collapse. Lo correcto es decir que, para $X_1>0$, el high steady state es el único attractor relevante, no que sea literalmente el único steady state del sistema. Proposition 10, p. 27.
 
 ---
 
-### 9. ¿Puede \(\tau_A^*\) ser cero?
+### 9. ¿Puede $\tau_A^{*}$ ser cero?
 
 **CONFIRMED.**
 
 Sí. Tanto Proposition 10 como Proposition 11 permiten explícitamente
 
-\[
-\tau_A^*=0.
-\]
+$$
+\tau_A^{*}=0.
+$$
 
-Por ello, el paper no garantiza que alguna cantidad positiva de agentic AI mejore welfare en todos los parámetros admisibles. Si \(\tau_A^*=0\), welfare disminuye para todo \(\tau_A>0\).
+Por ello, el paper no garantiza que alguna cantidad positiva de agentic AI mejore welfare en todos los parámetros admisibles. Si $\tau_A^{*}=0$, welfare disminuye para todo $\tau_A>0$.
 
 ---
 
-### 10. Límite cuando \(\tau_A\to\infty\)
+### 10. Límite cuando $\tau_A\to\infty$
 
 **NEEDS QUALIFICATION.**
 
-Para \(\varepsilon<4\), Proposition 10 demuestra exactamente que \(\bar U^+\to0\). El texto interpreta este límite como effort humano y general knowledge tendiendo a cero. Mi palabra “gradualmente” añadía una caracterización no demostrada y debe eliminarse.
+Para $\varepsilon<4$, Proposition 10 demuestra exactamente que $\bar U^+\to0$. El texto interpreta este límite como effort humano y general knowledge tendiendo a cero. Mi palabra “gradualmente” añadía una caracterización no demostrada y debe eliminarse.
 
-Para \(\varepsilon>4\), no se sigue al high steady state hasta infinito: este desaparece al alcanzarse el collapse threshold y el welfare realizado pasa a cero.
+Para $\varepsilon>4$, no se sigue al high steady state hasta infinito: este desaparece al alcanzarse el collapse threshold y el welfare realizado pasa a cero.
 
-**Conservar para el trabajo:** “Si \(\varepsilon<4\), \(\lim_{\tau_A\to\infty}\bar U^+=0\). Si \(\varepsilon>4\), el high steady state deja de estar disponible al cruzarse \(\tau_A^c\), y posteriormente welfare es cero.”
+**Conservar para el trabajo:** “Si $\varepsilon<4$, $\lim_{\tau_A\to\infty}\bar U^+=0$. Si $\varepsilon>4$, el high steady state deja de estar disponible al cruzarse $\tau_A^c$, y posteriormente welfare es cero.”
 Propositions 10–11, p. 27.
 
 ---
 
-### 11. Proposition 11: \(\varepsilon>4\)
+### 11. Proposition 11: $\varepsilon>4$
 
 **CONFIRMED.**
 
-Bajo \(\varepsilon>4\) y Assumption 2, existe
+Bajo $\varepsilon>4$ y Assumption 2, existe
 
-\[
-0\leq\tau_A^*<\tau_A^c
-\]
+$$
+0\leq\tau_A^{*}<\tau_A^c
+$$
 
 tal que:
 
-\[
-\bar U^+\text{ aumenta estrictamente en }(0,\tau_A^*),
-\]
+$$
+\bar U^+\text{ aumenta estrictamente en }(0,\tau_A^{*}),
+$$
 
-\[
-\bar U^+\text{ disminuye en }(\tau_A^*,\tau_A^c),
-\]
+$$
+\bar U^+\text{ disminuye en }(\tau_A^{*},\tau_A^c),
+$$
 
 y Proposition 11(iii) establece
 
-\[
+$$
 \bar U^+=0\qquad\text{cuando }\tau_A>\tau_A^c.
-\]
+$$
 
 Así, el welfare del high steady state alcanza su máximo antes del collapse threshold. Proposition 11, p. 27.
 
@@ -609,47 +587,47 @@ Así, el welfare del high steady state alcanza su máximo antes del collapse thr
 
 **CONFIRMED.**
 
-Para \(\varepsilon>4\) y \(\tau_A<\tau_A^c\), coexisten collapse y high steady state. Section 4.1, p. 25, establece:
+Para $\varepsilon>4$ y $\tau_A<\tau_A^c$, coexisten collapse y high steady state. Section 4.1, p. 25, establece:
 
-- si \(X_1>\bar X_m\), la economía converge al high steady state y realiza \(\bar U^+\);
-- si \(X_1<\bar X_m\), converge al collapse state y realiza welfare cero.
+- si $X_1>\bar X_m$, la economía converge al high steady state y realiza $\bar U^+$;
+- si $X_1<\bar X_m$, converge al collapse state y realiza welfare cero.
 
-Además, \(\bar X_m\) aumenta con \(\tau_A\). Por tanto, \(\bar U^+(\tau_A)\) es welfare condicional a alcanzar el high steady state, no necesariamente el welfare efectivamente realizado desde cualquier condición inicial.
+Además, $\bar X_m$ aumenta con $\tau_A$. Por tanto, $\bar U^+(\tau_A)$ es welfare condicional a alcanzar el high steady state, no necesariamente el welfare efectivamente realizado desde cualquier condición inicial.
 
-Sin una condición inicial o una distribución sobre \(X_1\), el paper no proporciona una única función de “expected realized welfare” que agregue ambos resultados.
+Sin una condición inicial o una distribución sobre $X_1$, el paper no proporciona una única función de “expected realized welfare” que agregue ambos resultados.
 
 ---
 
-### 13. Qué ocurre exactamente en \(\tau_A=\tau_A^c\)
+### 13. Qué ocurre exactamente en $\tau_A=\tau_A^c$
 
 **NEEDS QUALIFICATION.**
 
 Section 4 no es completamente uniforme en el tratamiento de la igualdad:
 
-- La discusión de Section 4.1, p. 25, dice que si \(\tau_A\geq\tau_A^c\), hay complete knowledge collapse y welfare cero para todas las condiciones iniciales.
-- Proposition 11(iii), p. 27, formula formalmente el resultado solo para \(\tau_A>\tau_A^c\).
-- Sus partes de monotonicidad llegan hasta el intervalo abierto \((\tau_A^*,\tau_A^c)\).
+- La discusión de Section 4.1, p. 25, dice que si $\tau_A\geq\tau_A^c$, hay complete knowledge collapse y welfare cero para todas las condiciones iniciales.
+- Proposition 11(iii), p. 27, formula formalmente el resultado solo para $\tau_A>\tau_A^c$.
+- Sus partes de monotonicidad llegan hasta el intervalo abierto $(\tau_A^{*},\tau_A^c)$.
 
-Por tanto, mi afirmación anterior de que la igualdad quedaba sencillamente “sin caracterizar” era demasiado amplia: el texto sí afirma collapse en la igualdad, pero la proposition no caracteriza por separado el valor límite, la continuidad ni el comportamiento de \(\bar U^+\) exactamente en el umbral.
+Por tanto, mi afirmación anterior de que la igualdad quedaba sencillamente “sin caracterizar” era demasiado amplia: el texto sí afirma collapse en la igualdad, pero la proposition no caracteriza por separado el valor límite, la continuidad ni el comportamiento de $\bar U^+$ exactamente en el umbral.
 
-**Conservar para el trabajo:** “Section 4.1 incluye \(\tau_A=\tau_A^c\) en la región de collapse; Proposition 11 emplea desigualdad estricta y no formaliza por separado el high-state welfare exactamente en el umbral.”
+**Conservar para el trabajo:** “Section 4.1 incluye $\tau_A=\tau_A^c$ en la región de collapse; Proposition 11 emplea desigualdad estricta y no formaliza por separado el high-state welfare exactamente en el umbral.”
 
 ---
 
 ## Balance final
 
-1. **Sobrevive sin cambios:** welfare combina productividad informada y costo de effort; \(d\bar U^+/d\tau_A=DE-IE\); el efecto directo es positivo, el efecto dinámico vía \(\bar X_h\) es negativo; Propositions 10–11 implican un perfil single-peaked bajo sus assumptions; el welfare realizado depende de la cuenca de atracción cuando \(\varepsilon>4\).
+1. **Sobrevive sin cambios:** welfare combina productividad informada y costo de effort; $d\bar U^+/d\tau_A=DE-IE$; el efecto directo es positivo, el efecto dinámico vía $\bar X_h$ es negativo; Propositions 10–11 implican un perfil single-peaked bajo sus assumptions; el welfare realizado depende de la cuenca de atracción cuando $\varepsilon>4$.
 
-2. **Debe matizarse:** \(\bar Y_h\) no siempre aumenta; \(\tau_A^*\) puede ser cero; “unique steady state” debe sustituirse por high-state attractor para \(X_1>0\); el envelope theorem no identifica un tercer efecto separado; la igualdad en \(\tau_A^c\) aparece en el texto, pero no queda formalizada separadamente en Proposition 11.
+2. **Debe matizarse:** $\bar Y_h$ no siempre aumenta; $\tau_A^{*}$ puede ser cero; “unique steady state” debe sustituirse por high-state attractor para $X_1>0$; el envelope theorem no identifica un tercer efecto separado; la igualdad en $\tau_A^c$ aparece en el texto, pero no queda formalizada separadamente en Proposition 11.
 
 3. **Era incorrecto:** presentar Assumption 2 como necesaria. Es una condición suficiente impuesta para la caracterización de Propositions 10–11.
 
 4. **¿Aumenta el welfare cuando aumenta la precisión de agentic AI?**
-No necesariamente. Bajo Assumption 2, aumenta solo para \(0<\tau_A<\tau_A^*\), si \(\tau_A^*>0\).
+No necesariamente. Bajo Assumption 2, aumenta solo para $0<\tau_A<\tau_A^{\ast}$, si $\tau_A^{\ast}>0$.
 Disminuye después porque el crowding-out de effort y general knowledge domina el beneficio directo.
-Si \(\varepsilon<4\), \(\bar U^+\to0\) cuando \(\tau_A\to\infty\).
-Si \(\varepsilon>4\), \(\tau_A^*<\tau_A^c\), y cruzar \(\tau_A^c\) produce collapse y welfare cero.
-Con múltiples steady states, esto describe \(\bar U^+\); el welfare realizado también depende de \(X_1\).
+Si $\varepsilon<4$, $\bar U^+\to0$ cuando $\tau_A\to\infty$.
+Si $\varepsilon>4$, $\tau_A^{*}<\tau_A^c$, y cruzar $\tau_A^c$ produce collapse y welfare cero.
+Con múltiples steady states, esto describe $\bar U^+$; el welfare realizado también depende de $X_1$.
 
 ## User
 
@@ -692,52 +670,46 @@ POSIBLE EXTENSIÓN:
 Fuente: [copia MIT, May 5, 2026](https://economics.mit.edu/sites/default/files/2026-05/AI,%20Human%20Cognition%20and%20Knowledge%20Collapse%2005-05-26.pdf).
 
 **5.1:**
-Relaja realmente el supuesto de que agentic AI solo aporta información context-specific y no mejora la agregación de general knowledge. Sustituye el \(I\) fijo por
+Relaja realmente el supuesto de que agentic AI solo aporta información context-specific y no mejora la agregación de general knowledge. Sustituye el $I$ fijo por
 
-\[
-I(\tau_A)=I_0+\exp(\eta\tau_A).
-\tag{11}
-\]
+$$
+I(\tau_A)=I_0+\exp(\eta\tau_A). \tag{11}
+$$
 
-Así, \(\tau_A\) combina sustitución de effort y mejor agregación. Proposition 14 conserva el resultado de desaparición de \(\bar X_h\) y un óptimo finito solo si \(\eta<\varepsilon/2\). Lo demás permanece sin cambios. pp. 30–31, ecuación (11), Proposition 14.
+Así, $\tau_A$ combina sustitución de effort y mejor agregación. Proposition 14 conserva el resultado de desaparición de $\bar X_h$ y un óptimo finito solo si $\eta<\varepsilon/2$. Lo demás permanece sin cambios. pp. 30–31, ecuación (11), Proposition 14.
 
 **5.2:**
-Relaja realmente que todo nuevo general knowledge provenga del effort humano: añade una señal sintética exógena de precisión \(\tau_{\mathrm{syn}}\):
+Relaja realmente que todo nuevo general knowledge provenga del effort humano: añade una señal sintética exógena de precisión $\tau_{\mathrm{syn}}$:
 
-\[
-X_{t+1}^{-1}
-=
-(X_t+\lambda_GE_t+\tau_{\mathrm{syn}})^{-1}+\Sigma^2.
-\tag{12}
-\]
+$$
+X_{t+1}^{-1} = (X_t+\lambda_GE_t+\tau_{\mathrm{syn}})^{-1}+\Sigma^2. \tag{12}
+$$
 
-El mapa correspondiente es (13). Si \(0<\tau_{\mathrm{syn}}<\infty\), cero deja de ser steady state y aparece un low-knowledge state positivo; el crowding-out por \(\tau_A\) permanece. La sustitución perfecta \(\tau_{\mathrm{syn}}=\infty\) solo se discute como límite y no está cubierta por Proposition 15. pp. 31–33, ecuaciones (12)–(13), Proposition 15.
+El mapa correspondiente es (13). Si $0<\tau_{\mathrm{syn}}<\infty$, cero deja de ser steady state y aparece un low-knowledge state positivo; el crowding-out por $\tau_A$ permanece. La sustitución perfecta $\tau_{\mathrm{syn}}=\infty$ solo se discute como límite y no está cubierta por Proposition 15. pp. 31–33, ecuaciones (12)–(13), Proposition 15.
 
 **5.3:**
-Relaja realmente el acoplamiento lineal idéntico con el que un único effort produce ambos tipos de conocimiento. Mantiene private precision \(\lambda_Ie\), pero cambia la contribución pública a
+Relaja realmente el acoplamiento lineal idéntico con el que un único effort produce ambos tipos de conocimiento. Mantiene private precision $\lambda_Ie$, pero cambia la contribución pública a
 
-\[
-\lambda_G e^\beta,\qquad
-E_{m,t}^{(\beta)}=\int_{\mathcal I_m}e_{i,t}^{\beta}di,
-\tag{14}
-\]
+$$
+\lambda_G e^\beta,\qquad E_{m,t}^{(\beta)}=\int_{\mathcal I_m}e_{i,t}^{\beta}di, \tag{14}
+$$
 
-donde menor \(\beta\) significa mayor separabilidad. No introduce dos esfuerzos ni una elección explícita de “dirección”; eso solo se motiva verbalmente. Para \(\beta>0\), Proposition 16 conserva los resultados reemplazando \(\varepsilon<4\) por \(\varepsilon<4/\beta\). \(\beta=0\) se describe como límite perfectamente separable, pero queda fuera de la proposition. pp. 33–34, ecuación (14), Proposition 16.
+donde menor $\beta$ significa mayor separabilidad. No introduce dos esfuerzos ni una elección explícita de “dirección”; eso solo se motiva verbalmente. Para $\beta>0$, Proposition 16 conserva los resultados reemplazando $\varepsilon<4$ por $\varepsilon<4/\beta$. $\beta=0$ se describe como límite perfectamente separable, pero queda fuera de la proposition. pp. 33–34, ecuación (14), Proposition 16.
 
 **ASSUMPTIONS QUE SIGUEN VIGENTES:**
-Las extensiones se estudian por separado, no acumulativamente. Salvo el margen modificado en cada subsección, permanecen el agente atomístico y short-lived, señales gaussianas y actualización bayesiana, el AI signal context-specific \(s^A_{i,t}\sim N(\theta_{i,t},\tau_A^{-1})\), private precision \(\lambda_Ie\), el mismo costo \(\frac{\varepsilon}{\varepsilon+1}e^{(\varepsilon+1)/\varepsilon}\), y el externality de public learning. Baseline pp. 7–14, ecuaciones (1)–(6); confirmaciones explícitas pp. 31–33.
+Las extensiones se estudian por separado, no acumulativamente. Salvo el margen modificado en cada subsección, permanecen el agente atomístico y short-lived, señales gaussianas y actualización bayesiana, el AI signal context-specific $s^A_{i,t}\sim N(\theta_{i,t},\tau_A^{-1})$, private precision $\lambda_Ie$, el mismo costo $\frac{\varepsilon}{\varepsilon+1}e^{(\varepsilon+1)/\varepsilon}$, y el externality de public learning. Baseline pp. 7–14, ecuaciones (1)–(6); confirmaciones explícitas pp. 31–33.
 
 **ASSUMPTION NO RELAJADA:**
 Assumption 1 se mantiene “throughout”:
 
-\[
+$$
 \Delta_I=0,\qquad \Delta_X>0.
-\]
+$$
 
-Por tanto, context-specific knowledge solo no genera valor y general/context-specific knowledge conservan complementariedad estricta. p. 9, Assumption 1 y ecuación (6). Ninguna parte de Section 5 ni del appendix estudia \(\Delta_I>0\).
+Por tanto, context-specific knowledge solo no genera valor y general/context-specific knowledge conservan complementariedad estricta. p. 9, Assumption 1 y ecuación (6). Ninguna parte de Section 5 ni del appendix estudia $\Delta_I>0$.
 
 **POSIBLE EXTENSIÓN:**
-Relajar Assumption 1 permitiendo \(\Delta_I>0\): medir cuánto valor conserva la recomendación context-specific cuando general knowledge colapsa y si el estado \(X=0\) sigue siendo económicamente un “knowledge collapse” con welfare cero.
+Relajar Assumption 1 permitiendo $\Delta_I>0$: medir cuánto valor conserva la recomendación context-specific cuando general knowledge colapsa y si el estado $X=0$ sigue siendo económicamente un “knowledge collapse” con welfare cero.
 
 ## User
 
@@ -755,11 +727,11 @@ Haz commit y push en analysis, pero detente antes del PR.
 
 Primero verificaré la rama y el estado del repositorio, luego compararé visualmente la derivación con las ecuaciones de Observation 1. Solo la integraré si los signos y pasos algebraicos son correctos; la imagen quedará intacta.
 
-La derivación es correcta: parte de \(Y_{i,t}=\sigma^{-2}+\lambda_Ie_{i,t}+\tau_A\), obtiene la FOC del paper y demuestra ambos cross-partials con los signos correctos. También verifica correctamente \(g'(z)=-(z+1)\phi(\sqrt z)/(2z^{3/2})<0\). Ahora revisaré el encaje en la slide y la consistencia final de los tres archivos.
+La derivación es correcta: parte de $Y_{i,t}=\sigma^{-2}+\lambda_Ie_{i,t}+\tau_A$, obtiene la FOC del paper y demuestra ambos cross-partials con los signos correctos. También verifica correctamente $g'(z)=-(z+1)\phi(\sqrt z)/(2z^{3/2})<0$. Ahora revisaré el encaje en la slide y la consistencia final de los tres archivos.
 
 ## Assistant
 
-La derivación manuscrita es correcta: reproduce la FOC y demuestra \(U_{eX}>0\), \(U_{e\tau_A}<0\) y \(g'(z)<0\), incluyendo la condición \(X_t>0\). La imagen no fue modificada.
+La derivación manuscrita es correcta: reproduce la FOC y demuestra $U_{eX}>0$, $U_{e\tau_A}<0$ y $g'(z)<0$, incluyendo la condición $X_t>0$. La imagen no fue modificada.
 
 - [README.md](C:/Users/WILLIAM/Documents/GitHub/ai-04-acemoglu/README.md:64): actualizado.
 - [prompts.md](C:/Users/WILLIAM/Documents/GitHub/ai-04-acemoglu/prompts.md): conversación añadida.
@@ -806,11 +778,11 @@ Haré la revisión como una auditoría final: primero volveré a leer el issue #
 
 El issue y la guía confirman el alcance: cuatro entregables mínimos, README de una página, prompts y respuestas relevantes sin depurar, una foto manuscrita y un deck Beamer de cinco minutos con exactamente cinco slides. También confirman que la derivación debe documentar el punto que se quiso comprobar, no ser una mera ilustración. Ahora revisaré el contenido efectivo, no solo la presencia de archivos.
 
-He encontrado tres ajustes reales antes de cerrar: `prompts.md` conserva solo el cierre abreviado de la auditoría de Section 4 aunque la respuesta completa aún está disponible; el README menciona “prices”, que no existen en este modelo; y el deck puede expresar mejor los casos \(\tau_A^*=0\), \(\tau_A<\tau_A^c\) y \(\varepsilon=4\). Corregiré esos puntos sin añadir contenido reconstruido.
+He encontrado tres ajustes reales antes de cerrar: `prompts.md` conserva solo el cierre abreviado de la auditoría de Section 4 aunque la respuesta completa aún está disponible; el README menciona “prices”, que no existen en este modelo; y el deck puede expresar mejor los casos $\tau_A^{*}=0$, $\tau_A<\tau_A^c$ y $\varepsilon=4$. Corregiré esos puntos sin añadir contenido reconstruido.
 
 Revisé el issue #3, la Course Repository Guide, los cinco entregables, las ecuaciones y referencias contra la copia MIT, las cinco páginas del PDF y el estado Git.
 
-Corregí `prompts.md` restaurando literalmente la auditoría completa de Section 4 y el cierre de la revisión manuscrita; la respuesta inicial de welfare que ya no estaba disponible palabra por palabra no fue inventada. En README eliminé una referencia impropia a “prices”. En el deck precisé \(\tau_A^*=0\), los regímenes alrededor de \(\tau_A^c\) y que \(\varepsilon=4\) no está caracterizado. También eliminé un comentario heredado de la plantilla en `.gitignore`.
+Corregí `prompts.md` restaurando literalmente la auditoría completa de Section 4 y el cierre de la revisión manuscrita; la respuesta inicial de welfare que ya no estaba disponible palabra por palabra no fue inventada. En README eliminé una referencia impropia a “prices”. En el deck precisé $\tau_A^{*}=0$, los regímenes alrededor de $\tau_A^c$ y que $\varepsilon=4$ no está caracterizado. También eliminé un comentario heredado de la plantilla en `.gitignore`.
 
 El PDF final tiene cinco slides, compila sin desbordamientos y la foto es legible. Los temporales fueron eliminados, `git diff --check` pasa y `analysis` está sincronizado con `origin/analysis`. No se abrió PR ni se hizo merge.
 
