@@ -16,5 +16,6 @@
 DNI*
 *_DNI*
 
-# The article itself: third-party PDF, fetch it from arXiv
+# Third-party paper PDFs are not versioned
 paper/*.pdf
+papers/*.pdf

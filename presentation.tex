@@ -65,10 +65,11 @@
   AI supplies context-specific precision directly, where returns are diminishing.
 
   \smallskip
-  \textbf{Dynamic condition.} With \(\varepsilon>4\), zero knowledge is locally
-  stable; if \(\tau_A>\tau_A^c\), it is uniquely and globally stable
-  (Proposition 5). If \(\varepsilon<4\), every \(X_1>0\) converges instead to
-  the high-knowledge state (Proposition 3).
+  \textbf{Dynamic conditions.} If \(\varepsilon<4\), every \(X_1>0\) converges
+  to the high state (Proposition 3). If \(\varepsilon>4\) and
+  \(\tau_A<\tau_A^c\), collapse and the high state coexist and \(X_1\) selects
+  the basin; if \(\tau_A>\tau_A^c\), collapse is unique and globally stable
+  (Proposition 5). The boundary \(\varepsilon=4\) is not characterized.
 \end{frame}
 
 \begin{frame}{3 \textperiodcentered{} What I did}
@@ -84,8 +85,9 @@
       X_{t+1}\downarrow\Rightarrow e_{t+1}\downarrow.
       \]
     \item Audited welfare: under Assumption 2,
-      \(\sigma^{-2}\geq\sqrt2-1\), Propositions 10--11 imply a finite,
-      single-peaked welfare optimum in AI precision.
+      \(\sigma^{-2}\geq\sqrt2-1\), Propositions 10--11 give a finite threshold
+      \(\tau_A^*\geq0\): welfare rises before it (if that interval is nonempty)
+      and falls after it.
     \item Checked Section 5 and the appendix before proposing an extension:
       aggregation, synthetic data, and effort separability are already covered;
       the production restriction \(\Delta_I=0\) is not relaxed.
